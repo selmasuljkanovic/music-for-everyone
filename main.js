@@ -1,0 +1,1 @@
+$('.navbar-toggler').html("<i class='fas fa-bars' style='color:#d8303e;'></i>");

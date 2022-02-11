@@ -1,0 +1,258 @@
+
+/******************************
+variables
+******************************/
+$navPlava: #09192c; 
+$tamnoPlava: #0b193c;
+$pink: #f91257;
+$bela: white;
+$svetloSiva: #f8f8f8;
+$fontColor: #0b193c;
+$violet: #383c6e;
+$font: 16px;
+$padding: 80px 0;
+$fontFamily: 'Montserrat', sans-serif;
+$transition: .3s ease;
+/******************
+mixins
+******************/
+@mixin  btn($bg, $cl, $bg1, $cl1, $border) {
+    background: $bg;
+    color: $cl;
+    transition: $transition;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    &:hover{
+        background: $bg1;
+        color: $cl1;
+        border: $border;
+        text-decoration: none;
+    }
+}
+
+/******************************
+basic styles
+******************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: $font;
+    color: $fontColor;
+    font-family: $fontFamily;
+    line-height: 1.5;
+}
+ul {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/************
+Nav
+*************/
+.navbar{
+    background: $navPlava ;
+    .navbar-brand{
+        color: $pink;
+        font-weight: 800;
+        span{
+            color: $svetloSiva;
+        }
+    }
+    .navbar-nav{
+        a{
+            color: $svetloSiva;
+            font-size: 14px;
+            transition: $transition;
+            &:hover{
+                color: $pink;
+            }
+        }
+    }
+}
+/************
+Header
+*************/
+header{
+    background: $tamnoPlava;
+    padding: $padding;
+
+    .col-md-6{
+        h1{
+            color: $pink;
+            font-size: 3.5rem;
+            font-weight: 800;
+            span{
+                color: $svetloSiva;
+            }
+        }
+        p{
+            color: $svetloSiva;
+            margin: 20px 0 30px 0;
+        }
+        a{
+            @include btn($pink , $svetloSiva, transparent, $pink, 2px solid $pink);
+        }
+    }
+}
+/**********
+about
+***********/
+.about{
+    padding: $padding;
+    .col-md-6{
+        h2{
+        font-size: 2.2rem;
+        font-weight: 800;
+        }
+        p{
+            font-size: 15px;
+            padding-bottom: 20px;
+        }
+        a{
+            @include btn($pink , $svetloSiva, transparent, $pink, 2px solid $pink);
+        }
+    }
+}
+/***********
+footer
+************/
+footer{
+    padding: $padding;
+    background: $tamnoPlava;
+    .col-md-10{
+        .brand{
+            color: $pink;
+            font-weight: 800;
+            font-size: 1.3rem;
+            span{
+                color: $svetloSiva;
+            }
+        }
+        p{
+            color: $svetloSiva;
+            font-size: 11px;
+            margin-top: 15px;
+        }
+        a{
+            i{
+                color: $svetloSiva;
+                margin:0 30px;
+                transition: $transition;
+               &:hover{
+                   color: $pink;
+               }
+            }
+        }
+    }
+}
+/****************
+How it works
+*****************/
+.howWorks{
+    background: $tamnoPlava;
+    padding: $padding;
+    h2{
+        font-weight: 800;
+        margin-bottom: 40px;
+    }
+    .row{
+        i{
+            color: $pink;
+            font-size: 3rem;
+        }
+        h5{
+            font-weight: 700;
+            margin: 30px 0;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+}
+/************
+artists
+************/
+.artists{
+    padding: $padding;
+    h2{
+        color: $tamnoPlava;
+        font-weight: 800;
+    }
+    p{
+        font-size: 13px;
+        margin: 0;
+    }
+    img{
+        border-radius: 30px;
+    }
+    h6{
+        font-weight: 800;
+        margin-top: 10px;
+    }
+}
+/************
+subscription
+************/
+.subscription{
+    padding: $padding;
+    background: $tamnoPlava;
+    h2{
+        font-weight: 800;
+    }
+    h5{
+        color: $pink;
+        margin: 20px 0;
+        font-weight: 700;
+    }
+    p{
+        font-size: 13px;
+        padding-bottom: 20px;
+    }
+    a{
+        @include btn($pink , $svetloSiva, transparent, $pink, 2px solid $pink);
+    }
+    .bg{
+        background:linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.1)), $tamnoPlava;
+        padding: 30px 0;
+        border-radius: 40px;
+        li{
+            line-height: 2;
+            &::before{
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 400;
+                content: "\f058";
+                color: $pink;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+/************
+concept
+************/
+.concept{
+    padding: $padding;
+    h2{
+        color: $tamnoPlava;
+        font-weight: 800;
+    }
+    p{
+        font-size: 13px;
+        margin: 0;
+    }
+    img{
+        border-radius: 50%;
+    }
+    h6{
+        font-weight: 800;
+        margin-top: 10px;
+    }
+}
